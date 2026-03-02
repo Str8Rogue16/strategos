@@ -1,24 +1,56 @@
-# --- STRATEGOS DATA SOVEREIGNTY ---
-# Do not track the Vault where sensitive strategy logs or 
-# observation sets are stored locally.
-vault/
-*.log
+# ==========================================
+# STRATEGOS // UNIFIED TACTICAL TEMPLATE
+# ==========================================
 
-# --- SECRETS & AUTH ---
-# Protect your API keys and local environment variables
+# --- [ NODE.JS / FRONTEND ] ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+dist/
+.parcel-cache/
+
+# --- [ PYTHON / DATA SCIENCE ] ---
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- [ STRATEGOS SPECIFIC ] ---
+# This protects your observation sets and drift analysis
+vault/*
+!vault/README.md
+data/*.csv
+data/*.json
+analysis_results/
+
+# --- [ SECRETS & UPLINKS ] ---
 .env
 .env.local
-.env.development.local
+secrets/
+*.pem
 
-# --- LOCAL PROXY / SYSTEM ---
-# Ignore the local proxy artifacts or node modules if you add them
-node_modules/
-dist/
+# --- [ SYSTEM JUNK ] ---
 .DS_Store
 Thumbs.db
-
-# --- IDE CONFIG ---
-# Don't leak your personal workflow settings
 .vscode/
 .idea/
-*.swp
